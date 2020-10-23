@@ -304,8 +304,8 @@ signIn.renderEl(
       return;
     }
 
-    // The user has started the activation flow, and is on the confirmation
-    // screen letting them know that an email is on the way.
+    // The user has completed the registration flow, and is on the confirmation
+    // screen letting them know that an email is on the way to activate.
     if (res.status === 'ACTIVATION_EMAIL_SENT') {
       // Any followup action you want to take
       // Properties available on `res`:
@@ -314,7 +314,8 @@ signIn.renderEl(
       return;
     }
 
-    // The user has completed the registration flow
+    // The user has completed the registration flow and no activation email
+    // was required to activate.
     if (res.status === 'REGISTRATION_COMPLETE') {
       // Any followup action you want to take
       // Properties available on `res`:
