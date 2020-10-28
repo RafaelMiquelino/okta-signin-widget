@@ -339,8 +339,6 @@ signIn.renderEl(
         // - stepUp (object)
         //   - url (string)
         //   - finish (function)
-        console.log(res.user);
-        console.log('Target resource url: ' + res.stepUp.url);
         res.stepUp.finish();
         return;
       }
@@ -353,7 +351,6 @@ signIn.renderEl(
         // - user (object)
         // - type (string)
         // - next (function)
-        console.log(res.user);
         res.next();
         return;
       }
@@ -369,7 +366,6 @@ signIn.renderEl(
       // - session (object)
       //   - token (string)
       //   - setCookieAndRedirect (function)
-      console.log(res.user);
       res.session.setCookieAndRedirect('https://acme.com/app');
       return;
 
