@@ -329,20 +329,15 @@ signIn.renderEl(
     // The user has successfully completed the authentication flow
     if (res.status === 'SUCCESS') {
 
-      // If the widget is configured for OIDC with a single responseType, the
-      // response will be the token.
-      // i.e. authParams.responseType = 'id_token':
+      // The response will contain a dictionary of tokens, which will
+      // differ depending on the value of the setting of `responseType`.
 
-      // Example handling of single responseType:
-      // myTokenManager.add('my_id_token', res);
+      // Using a token manager that consumes the entire object
+      // myTokenManager.addTokens(res.tokens);
 
-      // If the widget is configured for OIDC with multiple responseTypes, the
-      // response will be an array of tokens:
-      // i.e. authParams.responseType = ['id_token', 'token']
-
-      // Example handling of multiple responseTypes instead:
-      // myTokenManager.add('my_id_token', res[0]);
-      // myTokenManager.add('my_access_token', res[1]);
+      // Using a token manager that sets each token individually
+      // myTokenManager.addToken('id_token', res.tokens.idToken);
+      // myTokenManager.addToken('access_token', res.tokens.accessToken);
 
       return;
     }
