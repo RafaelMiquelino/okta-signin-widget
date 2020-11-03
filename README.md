@@ -274,7 +274,7 @@ Renders the widget to the DOM, and passes control back to your app through succe
 
 **OIDC Configuration:**
 
-This is the recommended configuration for new integrations as it uses a more lightweight REST-based protocol and has more widespread usage. For more information, see developer documentation on [choosing a protocol](https://developer.okta.com/docs/guides/build-sso-integration/openidconnect/overview/#choosing-a-protocol)
+This configuration is used for OIDC integrations. New integrations are recommended to use OIDC as it uses a more lightweight REST-based protocol and has more widespread usage.
 
 ```javascript
 signIn.renderEl(
@@ -352,6 +352,8 @@ signIn.renderEl(
 ```
 
 **Non-OIDC Configuration:**
+
+This configuration is needed for handling session-based integrations. For example, when using the Okta-hosted sign-in widget to redirect a user to the Okta Dashboard after authentication.
 
 ```javascript
 signIn.renderEl(
